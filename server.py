@@ -33,7 +33,8 @@ def predict():
     image = image.reshape(1, 28,28)  
 
     prediction = model.predict(image)
-    return jsonify({"prediction": int(prediction)})
+    predicted_value=np.argmax(prediction[0])
+    return jsonify({"prediction": int(predicted_value)})
 
 if __name__ == "__main__":
     app.run(debug=True)  
