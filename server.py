@@ -1,6 +1,6 @@
 import numpy as np
 import pickle
-import joblib  # Import joblib
+import joblib  
 import flask
 from flask import Flask, render_template, request, jsonify
 from PIL import Image
@@ -11,8 +11,8 @@ from tensorflow import keras
 from tensorflow.keras import datasets,layers,models
 app = Flask(__name__)
 
-# Load the trained model
-model = joblib.load('mnist_model.pkl')  # Ensure the file path is correct
+
+model = joblib.load('mnist_model.pkl')  
 
 @app.route("/")
 def index():
